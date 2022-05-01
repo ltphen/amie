@@ -10,7 +10,6 @@ import javatools.administrative.Announce;
 import javatools.filehandlers.FileLines;
 import javatools.filehandlers.TSVFile;
 import javatools.parsers.Char;
-
 /**
  * formats a TSV file into an HTML file
  * @author Fabian M. Suchanek
@@ -27,7 +26,7 @@ public static void main(String[] args) throws Exception {
     File tsvFile = new File(args[0]);
     File template = new File(args[1]);
     File htmlFile = new File(args[2]);
-    Writer out = javatools.util.FileUtils.getBufferedUTF8Writer(htmlFile);
+    Writer out = javatools.filehandlers.FileUtils.getBufferedUTF8Writer(htmlFile);
     for (String line : new FileLines(template)) {
       out.write(line);
       out.write("\n");
